@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Anniversary Babe 💙</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #d0eaff, #9fd3ff);
+        color: #1f3c88; /* Dark blue text */
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      /* HERO */
+      header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        color: #0b2e6d;
+      }
+
+      header p {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        color: #163f8c;
+      }
+
+      /* BUTTON */
+      .btn {
+        padding: 12px 25px;
+        background: white;
+        color: #4a90e2;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #4a90e2;
+        color: white;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 60px 20px;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      /* MESSAGE */
+      .message {
+        max-width: 700px;
+        margin: auto;
+        font-size: 1.2rem;
+        line-height: 1.8;
+      }
+
+      /* GALLERY */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 250px; /* Force same height */
+        object-fit: cover; /* Crop nicely without distortion */
+        border-radius: 15px;
+        transition: 0.3s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* COUNTDOWN */
+      .countdown {
+        font-size: 2rem;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      /* POPUP */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.4s ease;
+      }
+
+      .popup-content {
+        background: white;
+        color: #333;
+        padding: 30px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 20px;
+        text-align: center;
+        transform: scale(0.7);
+        transition: 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #4a90e2;
+      }
+
+      .popup-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .popup-overlay.active .popup-content {
+        transform: scale(1);
+      }
+
+      /* FLOATING HEARTS */
+      .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 20px;
+        animation: floatUp 5s linear infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(-100vh);
+          opacity: 0;
+        }
+      }
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        section {
+          margin: 15px;
+          padding: 40px 15px;
+        }
+
+        .message {
+          font-size: 1rem;
+        }
+
+        .countdown {
+          font-size: 1.5rem;
+        }
+
+        .popup-content {
+          width: 95%;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <header>
+      <h1>Happy Anniversary 💙</h1>
+      <p>Celebrating our beautiful journey together</p>
+      <button class="btn" onclick="openPopup()">Click for Surprise 💌</button>
+    </header>
+
+    <!-- MESSAGE -->
+    <section>
+      <h2>Our Love Story 💖</h2>
+      <p class="message">
+        Every moment with you feels magical. Thank you for filling my life with
+        happiness, support, and endless memories. I can’t wait to create many
+        more years together.
+      </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h2>Our Memories 📸</h2>
+      <div class="gallery">
+        <img src="./IMG_0308.JPG" />
+        <img src="./IMG_0327.JPG" />
+        <img src="./IMG_5353.JPG" />
+        <img src="./IMG_5400.JPG" />
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section>
+      <h2>Next Anniversary Countdown ⏳</h2>
+      <div class="countdown" id="countdown"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>Made with 💙 Forever & Always</footer>
+
+    <!-- POPUP -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>My Forever 💙</h2>
+        <p>
+          You are my favorite person, my safe place, and my greatest
+          blessing.<br />
+          Happy Anniversary O Gech❤️
+        </p>
+      </div>
+    </div>
+
+    <script>
+      /* POPUP */
+      function openPopup() {
+        document.getElementById("popup").classList.add("active");
+      }
+
+      function closePopup() {
+        document.getElementById("popup").classList.remove("active");
+      }
+
+      /* COUNTDOWN (22 Feb 2026 00:00 UTC+7) */
+      const anniversaryDate = new Date("2026-02-21T17:00:00Z").getTime();
+
+      const timer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = anniversaryDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+          clearInterval(timer);
+          document.getElementById("countdown").innerHTML =
+            "Happy Anniversary 💙";
+        }
+      }, 1000);
+
+      /* FLOATING HEARTS */
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💙";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(createHeart, 800);
+    </script>
+  </body>
+</html>
